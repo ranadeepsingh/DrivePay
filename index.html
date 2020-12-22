@@ -19,8 +19,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>
     DrivePay
   </title>
@@ -28,11 +28,11 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="assets/demo/demo.css" rel="stylesheet" />
   <!-- Alan -->
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
           rel="stylesheet">
@@ -52,31 +52,31 @@
         </div>
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="examples/dashboard.html">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./icons.html">
+            <a href="examples/icons.html">
               <i class="tim-icons icon-atom"></i>
               <p>DrivePay</p>
             </a>
           </li>
           <li>
-            <a href="./map.html">
+            <a href="examples/map.html">
               <i class="tim-icons icon-pin"></i>
               <p>Navigation</p>
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
+            <a href="examples/notifications.html">
               <i class="tim-icons icon-bell-55"></i>
               <p>Notifications</p>
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="examples/user.html">
               <i class="tim-icons icon-single-02"></i>
               <p>User Profile</p>
             </a>
@@ -138,7 +138,7 @@
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="../assets/img/anime3.png" alt="Profile Photo">
+                    <img src="assets/img/anime3.png" alt="Profile Photo">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
@@ -520,48 +520,48 @@
     </div>
   </div> -->
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/jquery.min.js"></script>
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="assets/js/core/jquery.min.js"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/core/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!--  Google Maps Plugin    -->
   <!-- Place this tag in your head or just before your close body tag. -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCubF69VcfzYM7Qsgh8842X4ge2R5-vgDg"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIUAIVT3E7yGH_OIdZUovIXdkMInzMVeU"></script>
   <!-- Chart JS -->
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <script src="assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
-  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../assets/demo/demo.js"></script>
-  <script src="../assets/js/alan.js"></script>
+  <script src="assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+  <script src="assets/demo/demo.js"></script>
+  <script src="assets/js/alan.js"></script>
   <script>
     var alanBtnInstance = alanBtn({
     key: "b7162bf606b705fb1a5958e41a35af1d2e956eca572e1d8b807a3e2338fdd0dc/stage",
     onCommand: function (commandData) {
       if (commandData.command === "open drivepay") {
-        window.location.href = 'icons.html';
+        window.location.href = 'examples/icons.html';
       } else if (commandData.command === "pay now") {
-        window.location.href = "pay-now.html";// link to page with drivepay selected and petrol pump and Rs. 500 entered
+        window.location.href = "examples/pay-now.html";// link to page with drivepay selected and petrol pump and Rs. 500 entered
       } else if (commandData.command === "pay petrol pump drivepay") {
-        window.location.href = "car-wallet.html";// link to page with drivepay selected and petrol pump and Rs. 500 entered
+        window.location.href = "examples/car-wallet.html";// link to page with drivepay selected and petrol pump and Rs. 500 entered
       } else if (commandData.command === "pay petrol pump drivepay 500") {
-        window.location.href ="car-wallet.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
+        window.location.href ="examples/car-wallet.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
       } else if (commandData.command === "pay petrol pump drivepay 1000") {
-        window.location.href = "car-wallet-1000.html";
+        window.location.href = "examples/car-wallet-1000.html";
       } else if (commandData.command === "pay wallet") {
-        window.location.href = "car-wallet.html";// on pay now page and select pay wallet option, take to voice authentication page
+        window.location.href = "examples/car-wallet.html";// on pay now page and select pay wallet option, take to voice authentication page
       } else if (commandData.command === "pay visa") {
-        window.location.href = "other-transaction-phrase.html";// on pay now page and select visa option, take to voice authentication page
+        window.location.href = "examples/other-transaction-phrase.html";// on pay now page and select visa option, take to voice authentication page
       } else if (commandData.command === "pay visa 1000") {
-        window.location.href = "other-transaction-1000-visa.html";// on pay now page and select visa option, take to voice authentication page
+        window.location.href = "examples/other-transaction-1000-visa.html";// on pay now page and select visa option, take to voice authentication page
       } 
       else if (commandData.command === "voice pin confirm") {
-        window.location.href = "payment-done-wallet.html";// voice auth done
+        window.location.href = "examples/payment-done-wallet.html";// voice auth done
       } else if (commandData.command === "home") {
-        window.location.href = 'dashboard.html';
+        window.location.href = 'examples/dashboard.html';
       } else if (commandData.command === "map") {
-        window.location.href = 'map.html';
+        window.location.href = 'examples/map.html';
       }
     },
     rootEl: document.getElementById("alan-btn"),
