@@ -15,6 +15,19 @@ var firebaseConfig = {
  //Listen for form submit
 document.getElementById('payment').addEventListener('submit',submitForm);
 
+function getTime() {
+    var today = new Date();
+    var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+    var time;
+    var minutes = today.getMinutes();
+    if ( minutes < 10 ) {
+    time = today.getHours() + ":0" + minutes; 
+    } else {
+    time = today.getHours() + ":" + today.getMinutes();
+    }
+    var dateTime = date + " " + time;
+    return dateTime;
+}
 //Submit form
 function submitForm(e){
     e.preventDefault();
