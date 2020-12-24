@@ -213,34 +213,87 @@
                     </a>
                     </div>
                   </div> -->
-                  
+                  <form id="payment">
                     <div class="table-full-width table-responsive">
                       <table class="table">
+                        
                         <tbody>
                             <tr>
                                 
                                 <td>
                                     <div class="form-group">
+                                      
                                         <label>To:</label>
-                                        <input id="to" type="text" class="form-control">
+                                        <input id="to" type="text" name="to" class="form-control">
+                                        
+                                      
                                       </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="form-group">
+                                      
                                         <label>Amount:</label>
-                                        <input id="amount" type="text" class="form-control">
+                                        <input id="amount" type="text" name="amount" class="form-control">
+                                        <div class="card-footer">
+                                        
+                                      </div>
                                       </div>
                                 </td>
                             </tr>
+                            
+                            <tr>
+                              
+                              <td>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input id="wallet" class="form-check-input" type="checkbox" name="method" value="wallet" checked>
+                                    <span class="form-check-sign">
+                                      <span class="check"></span>
+                                    </span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>
+                                <p class="title">Car Wallet </p>
+                                
+                              </td>
+                              
+                            </tr> 
+                             <tr>
+                              <td>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input id="card" class="form-check-input" type="checkbox" name="method" value="card">
+                                    <span class="form-check-sign">
+                                      <span class="check"></span>
+                                    </span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>
+                                <p class="title">Visa ****5678</p>
+                                
+                              </td>
+                              
+                            </tr> 
+                              
                     </tbody>
+                  
                       </table>
+                      
                     </div>
                     <div class="card-footer">
-                        <a href="other-payment-method.html"><button type="submit" class="btn btn-fill btn-primary">Select Method</button></a>
-                        
+                        <button type="submit" onClick="myFunction()" class="btn btn-fill btn-primary">Select Method </button>
+                        <script>
+                          function myFunction() {
+                            
+                              window.location.href="car-wallet.html";
+                          }
+                         </script>
                       </div>
+                    </form>
                   <!-- <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
                     <div class="font-icon-detail">
                       <i class="tim-icons icon-bank"></i>
@@ -331,6 +384,11 @@
       </ul>
     </div>
   </div> -->
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+
+<script src="../assets/js/main.js"></script>
+  
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
@@ -347,28 +405,39 @@
   <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
    <!-- Alan -->
-   <script src="../assets/js/alan.js"></script>
+   <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.js"></script>
+   
    <script>
      var alanBtnInstance = alanBtn({
-     key: "b7162bf606b705fb1a5958e41a35af1d2e956eca572e1d8b807a3e2338fdd0dc/stage",
+     key: "cafc49a5b3feb752f01346f93a4332d92e956eca572e1d8b807a3e2338fdd0dc/stage",
      onCommand: function (commandData) {
       if (commandData.command === "open drivepay") {
         window.location.href = 'icons.html';
-      } else if (commandData.command === "pay petrol pump drivepay") {
-        window.location.href = "car-wallet.html";// link to page with drivepay selected and petrol pump and Rs. 500 entered
+      } else if (commandData.command === "pay now") {
+        window.location.href ="pay-now.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
       } else if (commandData.command === "pay petrol pump drivepay 500") {
+        saveMessage("Indian Oil Petrol Pump", "500", "Wallet", "failed");
         window.location.href ="car-wallet.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
       } else if (commandData.command === "pay petrol pump drivepay 1000") {
-        window.location.href = "car-wallet-1000.html";
+        saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
+        window.location.href = "car-wallet.html";
       } else if (commandData.command === "pay wallet") {
+        saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
         window.location.href = "car-wallet.html";// on pay now page and select pay wallet option, take to voice authentication page
       } else if (commandData.command === "pay visa") {
+        saveMessage("Indian Oil Petrol Pump", "500", "Card", "failed");
         window.location.href = "other-transaction-phrase.html";// on pay now page and select visa option, take to voice authentication page
       } else if (commandData.command === "pay visa 1000") {
-        window.location.href = "other-transaction-1000-visa.html";// on pay now page and select visa option, take to voice authentication page
-      } 
-      else if (commandData.command === "voice pin confirm") {
+        saveMessage("Indian Oil Petrol Pump", "1000", "Card", "failed");
+        window.location.href = "car-wallet.html";// on pay now page and select visa option, take to voice authentication page
+      } else if (commandData.command === "pay parking") {
+        saveMessage("DLF Saket Parking", "25", "Card", "failed");
+        window.location.href = "car-wallet.html";// voice auth done
+      } else if (commandData.command === "pay ccd") {
+        saveMessage("Cafe Coffee Day", "623", "Wallet", "failed");
         window.location.href = "payment-done-wallet.html";// voice auth done
+      } else if (commandData.command === "voice pin confirm") {
+        methodAuthSelect(); // Selects between payment done for wallet case and fetching-otp in card case 
       } else if (commandData.command === "home") {
         window.location.href = 'dashboard.html';
       } else if (commandData.command === "map") {
@@ -377,7 +446,7 @@
      },
      rootEl: document.getElementById("alan-btn"),
    });
-   </script>
+  </script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

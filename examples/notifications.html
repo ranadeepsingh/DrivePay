@@ -394,37 +394,48 @@
   <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <!-- Alan -->
-  <script src="../assets/js/alan.js"></script>
+  <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.js"></script>
+   
   <script>
     var alanBtnInstance = alanBtn({
-    key: "b7162bf606b705fb1a5958e41a35af1d2e956eca572e1d8b807a3e2338fdd0dc/stage",
+    key: "cafc49a5b3feb752f01346f93a4332d92e956eca572e1d8b807a3e2338fdd0dc/stage",
     onCommand: function (commandData) {
-      if (commandData.command === "open drivepay") {
-        window.location.href = 'icons.html';
-      } else if (commandData.command === "pay petrol pump drivepay") {
-        window.location.href = "car-wallet.html";// link to page with drivepay selected and petrol pump and Rs. 500 entered
-      } else if (commandData.command === "pay petrol pump drivepay 500") {
-        window.location.href ="car-wallet.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
-      } else if (commandData.command === "pay petrol pump drivepay 1000") {
-        window.location.href = "car-wallet-1000.html";
-      } else if (commandData.command === "pay wallet") {
-        window.location.href = "car-wallet.html";// on pay now page and select pay wallet option, take to voice authentication page
-      } else if (commandData.command === "pay visa") {
-        window.location.href = "other-transaction-phrase.html";// on pay now page and select visa option, take to voice authentication page
-      } else if (commandData.command === "pay visa 1000") {
-        window.location.href = "other-transaction-1000-visa.html";// on pay now page and select visa option, take to voice authentication page
-      } 
-      else if (commandData.command === "voice pin confirm") {
-        window.location.href = "payment-done-wallet.html";// voice auth done
-      } else if (commandData.command === "home") {
-        window.location.href = 'dashboard.html';
-      } else if (commandData.command === "map") {
-        window.location.href = 'map.html';
-      }
+     if (commandData.command === "open drivepay") {
+       window.location.href = 'icons.html';
+     } else if (commandData.command === "pay now") {
+       window.location.href ="pay-now.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
+     } else if (commandData.command === "pay petrol pump drivepay 500") {
+       saveMessage("Indian Oil Petrol Pump", "500", "Wallet", "failed");
+       window.location.href ="car-wallet.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
+     } else if (commandData.command === "pay petrol pump drivepay 1000") {
+       saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
+       window.location.href = "car-wallet.html";
+     } else if (commandData.command === "pay wallet") {
+       saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
+       window.location.href = "car-wallet.html";// on pay now page and select pay wallet option, take to voice authentication page
+     } else if (commandData.command === "pay visa") {
+       saveMessage("Indian Oil Petrol Pump", "500", "Card", "failed");
+       window.location.href = "other-transaction-phrase.html";// on pay now page and select visa option, take to voice authentication page
+     } else if (commandData.command === "pay visa 1000") {
+       saveMessage("Indian Oil Petrol Pump", "1000", "Card", "failed");
+       window.location.href = "car-wallet.html";// on pay now page and select visa option, take to voice authentication page
+     } else if (commandData.command === "pay parking") {
+       saveMessage("DLF Saket Parking", "25", "Card", "failed");
+       window.location.href = "car-wallet.html";// voice auth done
+     } else if (commandData.command === "pay ccd") {
+       saveMessage("Cafe Coffee Day", "623", "Wallet", "failed");
+       window.location.href = "payment-done-wallet.html";// voice auth done
+     } else if (commandData.command === "voice pin confirm") {
+       methodAuthSelect(); // Selects between payment done for wallet case and fetching-otp in card case 
+     } else if (commandData.command === "home") {
+       window.location.href = 'dashboard.html';
+     } else if (commandData.command === "map") {
+       window.location.href = 'map.html';
+     }
     },
     rootEl: document.getElementById("alan-btn"),
   });
-  </script>
+ </script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

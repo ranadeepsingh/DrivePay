@@ -221,14 +221,22 @@
                   <div class="font-icon-list col-lg-6 col-md-3 col-sm-4 col-xs-6 col-xs-6">
                     <div class="font-icon-detail-wallet-auth">
                       
-                      <h2>To: Sohna Petrol Pump</h2>
-                      <h2>Amount: 500</h2>
-                      <h2>Method: Car Wallet</h2>
-                      <a href="payment-done-wallet.html">
-                      <h3 style="color: #e44cc4;">Say voice pin</h3>
                       
-                    </a>
+                        
+                      <h4 id="payment-to"></h4>
+                      <h4 id="payment-amount"></h4>
+                      <h4 id="payment-method"></h4>
+                      
+                      <!-- <a href="payment-done-wallet.html"> -->
+                      <!-- <h3   style="color: #e44cc4;"></h3> -->
+                      <button onClick="openFun()" id="auth-statement" type="submit" class="btn btn-fill btn-primary"></button>
+                      <a href="pay-now.html"><button class="btn btn-fill btn-primary"> Back </button></a>
+                      <p style="color: gray;">Hint: Voice Pin is "0420"</p>
+
+                    <!-- </a> -->
+
                     </div>
+                    
                   </div>
                   
                   <!-- <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
@@ -321,6 +329,77 @@
       </ul>
     </div>
   </div> -->
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+
+<script src="../assets/js/main.js"></script>
+
+
+
+<script>
+  var userDataRef = firebase.database().ref("messages").orderByKey();
+  userDataRef.once("value").then(function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+  var key = childSnapshot.key;
+  var childData = childSnapshot.val();              
+
+  var to_val = childSnapshot.val().to;
+  var amount_val = childSnapshot.val().amount;
+  var method_val = childSnapshot.val().method;
+  
+  document.getElementById("payment-to").innerHTML = "To: " + to_val;
+  document.getElementById("payment-amount").innerHTML = "Amount: " + amount_val;
+  document.getElementById("payment-method").innerHTML = "Method: " + method_val;
+  // $("#payment-to").append(to_val);
+  // $("#payment-amount").append(amount_val);
+  
+  });
+  });
+  
+</script>
+<script>
+  var userDataRef = firebase.database().ref("messages").orderByKey();
+  userDataRef.once("value").then(function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+  var method_val = childSnapshot.val().method;
+  if(method_val==="Wallet"){
+     document.getElementById("auth-statement").innerHTML = "Say voice pin";
+     
+   }else{
+    document.getElementById("auth-statement").innerHTML = "Say voice pin to fetch OTP";
+     
+   }
+   
+  
+  
+  
+  });
+  });
+  
+  
+   
+</script>
+<script>
+var temp = "not defined";
+var userDataRef = firebase.database().ref("messages").orderByKey();
+  userDataRef.once("value").then(function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+  var method_val = childSnapshot.val().method;
+  temp=method_val;
+  
+  
+  });
+  });
+  function openFun() {
+     if(temp==="Wallet"){
+      window.location.href="payment-done-wallet.html";
+   }else if(temp==="Card"){
+     window.location.href="fetching-otp.html";
+   }
+          
+       }
+</script> 
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
@@ -337,28 +416,39 @@
   <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
    <!-- Alan -->
-   <script src="../assets/js/alan.js"></script>
+   <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.js"></script>
+   
    <script>
      var alanBtnInstance = alanBtn({
-     key: "b7162bf606b705fb1a5958e41a35af1d2e956eca572e1d8b807a3e2338fdd0dc/stage",
+     key: "cafc49a5b3feb752f01346f93a4332d92e956eca572e1d8b807a3e2338fdd0dc/stage",
      onCommand: function (commandData) {
       if (commandData.command === "open drivepay") {
         window.location.href = 'icons.html';
-      } else if (commandData.command === "pay petrol pump drivepay") {
-        window.location.href = "car-wallet.html";// link to page with drivepay selected and petrol pump and Rs. 500 entered
+      } else if (commandData.command === "pay now") {
+        window.location.href ="pay-now.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
       } else if (commandData.command === "pay petrol pump drivepay 500") {
+        saveMessage("Indian Oil Petrol Pump", "500", "Wallet", "failed");
         window.location.href ="car-wallet.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
       } else if (commandData.command === "pay petrol pump drivepay 1000") {
-        window.location.href = "car-wallet-1000.html";
+        saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
+        window.location.href = "car-wallet.html";
       } else if (commandData.command === "pay wallet") {
+        saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
         window.location.href = "car-wallet.html";// on pay now page and select pay wallet option, take to voice authentication page
       } else if (commandData.command === "pay visa") {
+        saveMessage("Indian Oil Petrol Pump", "500", "Card", "failed");
         window.location.href = "other-transaction-phrase.html";// on pay now page and select visa option, take to voice authentication page
       } else if (commandData.command === "pay visa 1000") {
-        window.location.href = "other-transaction-1000-visa.html";// on pay now page and select visa option, take to voice authentication page
-      } 
-      else if (commandData.command === "voice pin confirm") {
+        saveMessage("Indian Oil Petrol Pump", "1000", "Card", "failed");
+        window.location.href = "car-wallet.html";// on pay now page and select visa option, take to voice authentication page
+      } else if (commandData.command === "pay parking") {
+        saveMessage("DLF Saket Parking", "25", "Card", "failed");
+        window.location.href = "car-wallet.html";// voice auth done
+      } else if (commandData.command === "pay ccd") {
+        saveMessage("Cafe Coffee Day", "623", "Wallet", "failed");
         window.location.href = "payment-done-wallet.html";// voice auth done
+      } else if (commandData.command === "voice pin confirm") {
+        methodAuthSelect(); // Selects between payment done for wallet case and fetching-otp in card case 
       } else if (commandData.command === "home") {
         window.location.href = 'dashboard.html';
       } else if (commandData.command === "map") {
@@ -367,7 +457,7 @@
      },
      rootEl: document.getElementById("alan-btn"),
    });
-   </script>
+  </script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -487,6 +577,7 @@
         application: "black-dashboard-free"
       });
   </script>
+  
 </body>
 
 </html>
