@@ -98,11 +98,17 @@
               </button>
             </div>
             <!-- <a class="navbar-brand" href="javascript:void(0)">Dashboard</a> -->
-            <a class="navbar-brand" href="javascript:void(0)"><p id="time"></p></a>
+            <a class="navbar-brand" href="dashboard.html"><p id="time"></p></a>
             <script>
               var today = new Date();
               var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-              var time = today.getHours() + ":" + today.getMinutes();
+              var time;
+              var minutes = today.getMinutes();
+              if ( minutes < 10 ) {
+              	time = today.getHours() + ":0" + minutes; 
+              } else {
+              	time = today.getHours() + ":" + today.getMinutes();
+              }
               var dateTime = date + " " + time;
               document.getElementById("time").innerHTML = dateTime;
             </script>

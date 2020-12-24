@@ -109,11 +109,25 @@
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)"><p id="time"></p></a>
+            <div class="navbar-toggle d-inline">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <!-- <a class="navbar-brand" href="javascript:void(0)">Dashboard</a> -->
+            <a class="navbar-brand" href="dashboard.html"><p id="time"></p></a>
             <script>
               var today = new Date();
               var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-              var time = today.getHours() + ":" + today.getMinutes();
+              var time;
+              var minutes = today.getMinutes();
+              if ( minutes < 10 ) {
+                time = today.getHours() + ":0" + minutes; 
+              } else {
+                time = today.getHours() + ":" + today.getMinutes();
+              }
               var dateTime = date + " " + time;
               document.getElementById("time").innerHTML = dateTime;
             </script>
@@ -190,7 +204,7 @@
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table tablesorter " id="">
+                  <table class="table tablesorter" id="">
                     <thead class=" text-primary">
                       <tr>
                         <th>
@@ -216,7 +230,7 @@
                           23/12/2020
                         </td>
                         <td>
-                          Car Wallet
+                          DrivePay Wallet
                         </td>
                         <td class="text-center">
                           ₹500
@@ -230,7 +244,7 @@
                           23/12/2020
                         </td>
                         <td>
-                          Car Wallet
+                          DrivePay Wallet
                         </td>
                         <td class="text-center">
                           ₹50
@@ -244,7 +258,7 @@
                           23/12/2020
                         </td>
                         <td>
-                          Other
+                          Visa Credit Card
                         </td>
                         <td class="text-center">
                           ₹2300
@@ -258,13 +272,13 @@
                           24/12/2020
                         </td>
                         <td>
-                          Car Wallet
+                          DrivePay Wallet
                         </td>
                         <td class="text-center">
-                          50₹
+                          ₹50
                         </td>
                       </tr>
-                      tr>
+                      <tr>
                         <td>
                           Cafe Coffee day 
                         </td>
@@ -272,7 +286,7 @@
                           25/12/2020
                         </td>
                         <td>
-                          Other
+                          Visa Credit Card
                         </td>
                         <td class="text-center">
                           ₹600
@@ -286,7 +300,7 @@
                           27/12/2020
                         </td>
                         <td>
-                          Car Wallet
+                          DrivePay Wallet
                         </td>
                         <td class="text-center">
                           ₹500
