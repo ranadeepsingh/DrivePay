@@ -93,4 +93,3 @@ function methodAuthSelect() {
     openFun(temp);
         
 }
-

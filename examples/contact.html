@@ -33,9 +33,8 @@
   <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
-  <!-- Alan -->
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
-  rel="stylesheet">
+          rel="stylesheet">
 </head>
 
 <body class="">
@@ -58,7 +57,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
+          <li >
             <a href="./icons.html">
               <i class="tim-icons icon-money-coins"></i>
               <p>DrivePay</p>
@@ -70,7 +69,7 @@
               <p>Navigation</p>
             </a>
           </li>
-          <li class="active">
+          <li>
             <a href="./notifications.html">
               <i class="tim-icons icon-bell-55"></i>
               <p>Notifications</p>
@@ -82,7 +81,7 @@
               <p>User Profile</p>
             </a>
           </li>
-           <li>
+           <li  class="active">
             <a href="./contact.html">
               <i class="tim-icons icon-email-85"></i>
               <p>Contact Us</p>
@@ -97,7 +96,8 @@
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)"><p id="time"></p></a>
+            
+              <a class="navbar-brand" href="javascript:void(0)"><p id="time"></p></a>
             <script>
               var today = new Date();
               var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
@@ -170,66 +170,55 @@
       </div>
       <!-- End Navbar -->
       <div class="content">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header">
-                <h4 class="card-title">Offers</h4>
-              </div>
+        
+          <div class="col-md-4">
+            <div class="card card-user">
               <div class="card-body">
-                <div class="alert alert-info">
-                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="tim-icons icon-tag"></i>
-                  </button>
-                  <span>Get 10% off on all McDonald's Drive through</span>
-                </div>
-                <div class="alert alert-info">
-                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="tim-icons icon-tag"></i>
-                  </button>
-                  <span>Use Drive Pay wallet to and get upto 100 wallet points back</span>
-                </div>
-                <div class="alert alert-info">
-                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="tim-icons icon-tag"></i>
-                  </button>
-                  <span>Use Drive pay to get groceries to your car from Reliance Fresh and get upto 10% off</span>
-                </div>
-                
-                
+                <p class="card-text">
+                  <div class="author">
+                    <div class="block block-one"></div>
+                    <div class="block block-two"></div>
+                    <div class="block block-three"></div>
+                    <div class="block block-four"></div>
+                    <a href="javascript:void(0)">
+                      <img class="avatar" src="../assets/img/anime3.png" alt="...">
+                      <h5 class="title">Digvijay Singh</h5>
+                    </a>
+                    <p class="description">
+                        <a href="mailto:digvijay.dhanker@gmail.com"> <p>digvijay.dhanker@gmail.com</p> </a>
+                      </p>
+                      <p class="description">
+                        <p><a target="_blank" href="https://www.linkedin.com/in/digvijay-dhanker-359259176/">LinkedIn</a></p>
+                      </p>
+                  </div>
+                </p>
               </div>
+              
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header">
-                <h4 class="card-title">Car Notification</h4>
+            <div class="card card-user">
+                <div class="card-body">
+                  <p class="card-text">
+                    <div class="author">
+                      <div class="block block-one"></div>
+                      <div class="block block-two"></div>
+                      <div class="block block-three"></div>
+                      <div class="block block-four"></div>
+                      <a href="javascript:void(0)">
+                        <img class="avatar" src="../assets/img/ranapic.png" alt="...">
+                        <h5 class="title">Ranadeep Singh</h5>
+                      </a>
+                      
+                      <p class="description">
+                        <a href="mailto:ranadeepsingh96@gmail.com"> <p>ranadeepsingh96@gmail.com</p> </a>
+                      </p>
+                      <p class="description">
+                        <p><a target="_blank" href="https://www.linkedin.com/in/ranadeepsingh/">LinkedIn</a></p>
+                      </p>
+                    </div>
+                  </p>
+                </div>
               </div>
-              <div class="card-body">
-                <div class="alert alert-primary">
-                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="tim-icons icon-simple-remove"></i>
-                  </button>
-                  <span> Next Service: 03/01/2021</span>
-                </div>
-                <div class="alert alert-info">
-                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="tim-icons icon-simple-remove"></i>
-                  </button>
-                  <span>Engine Status: Optimal</span>
-                </div>
-                <div class="alert alert-success">
-                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="tim-icons icon-simple-remove"></i>
-                  </button>
-                  <span> Fuel Status: 50% used </span>
-                </div>
-                
-                
-              </div>
-            </div>
           </div>
-          
         </div>
       </div>
       <!-- <footer class="footer">
@@ -318,49 +307,48 @@
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
-  <!-- Alan -->
   <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.js"></script>
    
-  <script>
-    var alanBtnInstance = alanBtn({
-    key: "cafc49a5b3feb752f01346f93a4332d92e956eca572e1d8b807a3e2338fdd0dc/stage",
-    onCommand: function (commandData) {
-     if (commandData.command === "open drivepay") {
-       window.location.href = 'icons.html';
-     } else if (commandData.command === "pay now") {
-       window.location.href ="pay-now.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
-     } else if (commandData.command === "pay petrol pump drivepay 500") {
-       saveMessage("Indian Oil Petrol Pump", "500", "Wallet", "failed");
-       window.location.href ="car-wallet.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
-     } else if (commandData.command === "pay petrol pump drivepay 1000") {
-       saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
-       window.location.href = "car-wallet.html";
-     } else if (commandData.command === "pay wallet") {
-       saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
-       window.location.href = "car-wallet.html";// on pay now page and select pay wallet option, take to voice authentication page
-     } else if (commandData.command === "pay visa") {
-       saveMessage("Indian Oil Petrol Pump", "500", "Card", "failed");
-       window.location.href = "other-transaction-phrase.html";// on pay now page and select visa option, take to voice authentication page
-     } else if (commandData.command === "pay visa 1000") {
-       saveMessage("Indian Oil Petrol Pump", "1000", "Card", "failed");
-       window.location.href = "car-wallet.html";// on pay now page and select visa option, take to voice authentication page
-     } else if (commandData.command === "pay parking") {
-       saveMessage("DLF Saket Parking", "25", "Card", "failed");
-       window.location.href = "car-wallet.html";// voice auth done
-     } else if (commandData.command === "pay ccd") {
-       saveMessage("Cafe Coffee Day", "623", "Wallet", "failed");
-       window.location.href = "payment-done-wallet.html";// voice auth done
-     } else if (commandData.command === "voice pin confirm") {
-       methodAuthSelect(); // Selects between payment done for wallet case and fetching-otp in card case 
-     } else if (commandData.command === "home") {
-       window.location.href = 'dashboard.html';
-     } else if (commandData.command === "map") {
-       window.location.href = 'map.html';
-     }
-    },
-    rootEl: document.getElementById("alan-btn"),
-  });
- </script>
+   <script>
+     var alanBtnInstance = alanBtn({
+     key: "cafc49a5b3feb752f01346f93a4332d92e956eca572e1d8b807a3e2338fdd0dc/stage",
+     onCommand: function (commandData) {
+      if (commandData.command === "open drivepay") {
+        window.location.href = 'icons.html';
+      } else if (commandData.command === "pay now") {
+        window.location.href ="pay-now.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
+      } else if (commandData.command === "pay petrol pump drivepay 500") {
+        saveMessage("Indian Oil Petrol Pump", "500", "Wallet", "failed");
+        window.location.href ="car-wallet.html"; // link to page with drivepay selected and petrol pump and Rs. 500 entered
+      } else if (commandData.command === "pay petrol pump drivepay 1000") {
+        saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
+        window.location.href = "car-wallet.html";
+      } else if (commandData.command === "pay wallet") {
+        saveMessage("Indian Oil Petrol Pump", "1000", "Wallet", "failed");
+        window.location.href = "car-wallet.html";// on pay now page and select pay wallet option, take to voice authentication page
+      } else if (commandData.command === "pay visa") {
+        saveMessage("Indian Oil Petrol Pump", "500", "Card", "failed");
+        window.location.href = "other-transaction-phrase.html";// on pay now page and select visa option, take to voice authentication page
+      } else if (commandData.command === "pay visa 1000") {
+        saveMessage("Indian Oil Petrol Pump", "1000", "Card", "failed");
+        window.location.href = "car-wallet.html";// on pay now page and select visa option, take to voice authentication page
+      } else if (commandData.command === "pay parking") {
+        saveMessage("DLF Saket Parking", "25", "Card", "failed");
+        window.location.href = "car-wallet.html";// voice auth done
+      } else if (commandData.command === "pay ccd") {
+        saveMessage("Cafe Coffee Day", "623", "Wallet", "failed");
+        window.location.href = "payment-done-wallet.html";// voice auth done
+      } else if (commandData.command === "voice pin confirm") {
+        methodAuthSelect(); // Selects between payment done for wallet case and fetching-otp in card case 
+      } else if (commandData.command === "home") {
+        window.location.href = 'dashboard.html';
+      } else if (commandData.command === "map") {
+        window.location.href = 'map.html';
+      }
+     },
+     rootEl: document.getElementById("alan-btn"),
+   });
+  </script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
