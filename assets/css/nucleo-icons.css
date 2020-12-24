@@ -39,9 +39,8 @@ Created using IcoMoon - icomoon.io
   padding: 45px 0 30px;
   border: 1px solid #e44cc4;
   border-radius: .1875rem;
-  margin: 0;
-  height: 250px;
-  width: 250px;
+  margin: 15px 0;
+  height: 168px;
 }
 .font-icon-detail-drive-pay {
   
@@ -75,6 +74,7 @@ Created using IcoMoon - icomoon.io
   height: 350px;
   width: 940px;
 }
+
 .font-icon-detail i {
   color: #FFFFFF;
   font-size: 1.5em;
